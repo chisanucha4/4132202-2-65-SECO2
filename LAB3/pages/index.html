@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <style>
+            .red{
+                color: red;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div id="div1">Hallo !</div>
+        <button id="btn1">click Me...</button> 
+        <hr>
+        <div>
+            <input type = "text" class="in1">
+            <input type = "text" class="in1">
+            <input type = "text" class="in1">
+        </div>
+        <div>
+            <button id="btn2">SAVE</button>
+            <button id="btn3">color</button>
+        </div>
+        <div id="div_form"></div>
+    </body>
+</html>
+<script>
+var num =10; //global
+let name ="Ome"; //scope
+const no = 10.99; 
+let arr = [10,20,"one"];
+const obj = { name:"two", age: 56 };
+const objMix = {
+    data:[
+        {name:"dang", gpa: 1.99},
+        {name:"dum", age:99, gpa: 3.00 }
+    ], 
+};
+
+ console.log(name);
+ console.log(arr[1]);
+ console.log(objMix.data[1].name);
+
+ document.getElementById("div1").innerHTML = name;
+
+ function add(a,b){
+    return a + b;
+    
+ }
+ console.log(add(3,5));
+
+$(function(){
+    // alert("Hallo jQuery!");
+    $("#div1").text(num);
+
+    $("#btn2").click(function(){
+        $(".in1").val("BRU");
+    });
+
+  $("#btn3").bind("click",()=>{
+    $(".in1:even").toggleClass("red");
+  });
+  $("#div_form").load("./pages/from.html")
+
+
+});//jQuery Handle
+
+
+</script>
+
+

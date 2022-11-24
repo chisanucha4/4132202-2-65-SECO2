@@ -1,0 +1,10 @@
+version: '3'
+services:
+  php-poper:
+   container_name: php-poper
+   image: php:7.4.33-zts-alpine
+   volumes:
+     - ./php:/var/www/html/
+   ports:
+     - 8000:80
+

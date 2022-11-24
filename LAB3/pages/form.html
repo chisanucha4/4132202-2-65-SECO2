@@ -1,0 +1,25 @@
+<form>
+    <input type="text" name="user" id="">
+    <select name="dress" id="">
+        <option value="">กรุณาเลือก</option>
+        <option value="">รองเท้า</option>
+        <option value="">กางเกง</option>
+    
+    </select>
+    <button type="submit">SAVE</button>
+</form>
+
+<script>
+    $("form").submit((e)=>{
+        e.preventDefault();
+        let form = 4(this);
+        $.ajax({
+            data : form.serialize(),
+            url : "index.html",
+            method : "GET",
+            success : function(data){
+                console.log(data):
+            },
+        });
+    });
+</script>
