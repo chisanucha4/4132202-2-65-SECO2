@@ -1,0 +1,37 @@
+<form action="index.php">
+    <input type="text" name="user" />
+    <button type="submit">Send</button>    
+</form>
+
+<!--POST-->
+<form action="index.php" method="post" id="fm2">
+    <input type="text" name="pass" value="555"/>
+    <input type="text" name="user"/>
+    <button type="submit">Send</button>
+</form>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script>
+    // let dataF = $("[name='pass']").val();
+    // console.log(dataF);
+
+     $ ("#fm2").submit((e)=>{
+        e.preventDefault();
+
+        let dataF = $(["name='pass"]).val();
+        var fm2 = $(this);
+
+        $.ajax({
+            url:"process.php",
+            //data: {pass: dataF},
+            data : fm2.serialize(),
+            method: "GET",
+            success:(res)=>{
+               // console.log(res);
+               console.log(res); 
+            },
+        });
+
+     });
+
+</script>
