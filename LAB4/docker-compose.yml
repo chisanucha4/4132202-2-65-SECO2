@@ -1,23 +1,22 @@
 version: '3'
 services:
   php:
-    container_name: php-poper
+    container_name: php-apache
     # image: php:7.3-apache
-    build:
+    build: .
     volumes:
-     - ./php:/var/www/html/
+      - ./php:/var/www/html/
     ports:
-     - 8000:80
+      - 8000:80
     depends_on:
-     - db  
+      - db
   db:
-   container_name: mysql
-   image: mysql
-   environment:
+    container_name: mysql
+    image: mysql:5.7.40
+    environment:
       MYSQL_ROOT_PASSWORD: 1234
       MYSQL_DATABASE: db_test
       MYSQL_USER: mysql
       MYSQL_PASSWORD: 1234
     ports:
-      - "3306:3306"    
-
+      - "3306:3306"
