@@ -1,0 +1,25 @@
+<from  id="fm_std_add">
+    <input type="text" placeholder="ID" name="std_id">
+    <input type="text" placeholder="NAME" name="std_name">
+    <input type="text" placeholder="SURNAME" name="std_sname">
+</from>
+
+<script>
+    $("#fm_std_add").submit(function(e){
+        e.preventDefault();
+        let fm_data = $(this).serialize();
+
+        $ajax({
+            url:"model/std_add_php",
+            method:"GET",
+            data: fm_data,
+            success: function(){
+                $("#div_res").html(res);
+                $("#div_action").load("/model/std_tb.php");
+
+            },
+
+        });
+    });
+
+</script>

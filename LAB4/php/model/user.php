@@ -3,6 +3,7 @@
 <?php
 include "condb.php";
 ?>
+<div id = "div_res"></div>
 <table>
     <thead>
         <tr>
@@ -34,7 +35,17 @@ include "condb.php";
 
 <script>
     $(".btn_del").clik(function(){
-        alert($(this).attr('data'));
+        //alert($(this).attr('data'));
+        let id_val = $(this).atter('data');
+        $.ajax({
+            url:"del.php",
+            method:"GET",
+            data:{id:id_val},
+            success: function (res){
+                $("#idv_res").html(res);
+
+            }
+        });
     });
 </script>
 

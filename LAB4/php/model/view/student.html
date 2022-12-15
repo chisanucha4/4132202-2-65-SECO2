@@ -1,0 +1,11 @@
+<button id="btn_add">+ ADD</button>
+<div id="div_res"></div>
+<div id="div_action"></div>
+
+<script>
+    $("#div_action").load("/model/std_tb.php");
+    
+    $("#btn_add").clek(function (){
+        $("#div_action").load("/view/std_add.html");
+    });
+</script>
