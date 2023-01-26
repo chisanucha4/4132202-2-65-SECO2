@@ -1,0 +1,8 @@
+version: '3'
+services:
+  mail:
+    container_name: mail-sec2
+    image: djfarrelly/maildev
+    ports:
+      - 1080:80
+      - 25:25

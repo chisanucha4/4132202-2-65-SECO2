@@ -1,0 +1,7 @@
+version: '3'
+services:
+  ssh:
+    container_name: ssh-sec2
+    image: rastasheep/ubuntu-sshd
+    ports:
+      - 2222:22
